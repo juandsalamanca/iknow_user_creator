@@ -13,6 +13,7 @@ if user and pwd and email:
     payload = {"username":user, "password":pwd, "email":email}
     response = requests.post("https://api.iknow.aidevlab.com/api/v1/auth/signup", json=payload)
     st.write(response.status_code)
-    st.write(response)
+    st.write(response.json())
+    st.write(response.text)
     if response.status_code == 200:
       st.success("New user created!")
